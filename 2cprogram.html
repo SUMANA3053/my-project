@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button CLICK EVENTS</title>
+  <!-- Load React and ReactDOM -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+ </head>
+ <body>
+   <div id = "root"></div>
+   
+   <script type ="text/babel">
+	class App extends React.Component{
+	 construct(props){
+	  super(props);
+	  this.state = {
+	   visible : true
+	  };
+	 }
+	 toggleText =() =>{
+	    this.setState({visible: !this.state.visible });
+	 }
+      render() {
+        return (
+          <div style={{ padding: "30px",textAlign: "center",fontfamily: "Arial" }}>
+            <h2>Toggle Text Example</h2>
+              <button 
+			    onClick={this.toogleText}
+				style={{
+					padding: "10px 20px",
+					backgroundColor: '#4CAF50",
+					color:"white",
+					border: "none",
+					cursor:"pointer",
+					marginBotton: "20px";
+				}}
+			  >
+			   Toggle Text
+			</button>
+			{this.state.visible && (
+			<p style = {{ fontsize: "18px"}}>
+			This is some toggled text!
+			</p>
+		   }}
+            </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
+
