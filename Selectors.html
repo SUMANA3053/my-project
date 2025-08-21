@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Selectors Example</title>
+<style>
+.highlight { 
+         color : green;
+         font-weight : bold;
+}
+</style>
+</head>
+<body>
+<h2 id = "main-title">Original Title</h2>
+<p class = "highlight">paragraph 1</p>
+<p class = "highlight">paragraph 2</p>
+<p>paragraph 3 </p>
+<div id = "result"></div>
+<script>
+  document.getElementById("main-title").innerHTML = "Title Changed by getElementsById()";
+  const classItems= document.getElementsByClassName("highlight");
+  classItems[0].innerHTML = "updated paragraph 1";
+  classItems[1].innerHTML = "updated paragraph 2";
+  const allParagraphs = document.getElementsByTagName("p");
+  allParagraphs[2].style.color="blue";
+  const firstHighlight = document.querySelector(".highlight");
+  firstHighlight.style.backgroundColor = "#f0f0f0";
+  const allHighlights = document.querySelectorAll(".highlight");
+  document.getElementById("result")innerHTML = "Total elements with class 'highlight':" +allHighlights.length;
+</script>
+</body>
+</html>
